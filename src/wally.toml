@@ -1,0 +1,14 @@
+[package]
+name = "ortho-games/orthoutil"
+version = "0.0.1"
+registry = "https://github.com/UpliftGames/wally-index"
+licence = "MIT"
+authors = ["DylWithlt, RoboGojo"]
+
+description = "A Ortho Games utility module for easy access utilities."
+
+realm = "shared"
+
+exclude = ["README.md"]
+
+[dependencies]
