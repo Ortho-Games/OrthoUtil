@@ -51,5 +51,32 @@ return function(Util)
 		end
 	end
 
+	function Util.timeIt(name: string, func)
+		local s = os.clock()
+		func()
+		print(name, "took", os.clock() - s, "to execute.")
+	end
+
+	function Util.timeItWarn(name: string, func)
+		local s = os.clock()
+		func()
+		warn(name, "took", os.clock() - s, "to execute.")
+	end
+
+	function Util.memoize(fn)
+		local cache = {}
+
+		return function(...)
+			local args = { ... }
+			local key = table.concat(args, ",")
+
+			if cache[key] == nil then
+				cache[key] = fn(...)
+			end
+
+			return cache[key]
+		end
+	end
+
 	return Util
 end
