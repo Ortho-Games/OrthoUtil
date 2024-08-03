@@ -1,0 +1,13 @@
+{
+  "name": "OrthoUtil-1",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "$ignoreUnknownInstances": true,
+      "OrthoUtil": {
+        "$path": "./src"
+      }
+    }
+  }
+}
