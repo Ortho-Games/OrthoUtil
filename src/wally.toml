@@ -5,7 +5,7 @@ registry = "https://github.com/UpliftGames/wally-index"
 licence = "MIT"
 authors = ["DylWithlt, RoboGojo"]
 
-description = "A Ortho Games utility library for easy access general purpose functions."
+description = "An Ortho Games utility library for easy access general purpose functions."
 
 realm = "shared"
 

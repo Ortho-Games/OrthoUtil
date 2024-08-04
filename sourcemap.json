@@ -24,6 +24,13 @@
                             ]
                         },
                         {
+                            "name": "Math",
+                            "className": "ModuleScript",
+                            "filePaths": [
+                                "src\\Math.lua"
+                            ]
+                        },
+                        {
                             "name": "TableUtil",
                             "className": "ModuleScript",
                             "filePaths": [
