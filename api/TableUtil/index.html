@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="plugin-moonwave plugin-id-moonwave">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v2.3.1">
+<title data-rh="true">TableUtil | OrthoUtil</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://ortho-games.github.io/OrthoUtil/api/TableUtil"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="TableUtil | OrthoUtil"><link data-rh="true" rel="canonical" href="https://ortho-games.github.io/OrthoUtil/api/TableUtil"><link data-rh="true" rel="alternate" href="https://ortho-games.github.io/OrthoUtil/api/TableUtil" hreflang="en"><link data-rh="true" rel="alternate" href="https://ortho-games.github.io/OrthoUtil/api/TableUtil" hreflang="x-default"><link rel="stylesheet" href="/OrthoUtil/assets/css/styles.e1adec2f.css">
+<link rel="preload" href="/OrthoUtil/assets/js/runtime~main.b292d188.js" as="script">
+<link rel="preload" href="/OrthoUtil/assets/js/main.763f2b72.js" as="script">
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
+<div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/OrthoUtil/"><b class="navbar__title text--truncate">OrthoUtil</b></a><a class="navbar__item navbar__link" href="/OrthoUtil/docs/intro">Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/OrthoUtil/api/">API</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/Ortho-Games/OrthoUtil.git" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="searchBox_ZlJk"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input type="search" id="search_input_react" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0 docPageContainer_wNNk"><div class="docPage_Dpn1"><div class="docSidebarContainer_o_re"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/OrthoUtil/api/OrthoUtil">​Ortho​Util</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/OrthoUtil/api/FunctionUtil">​Function​Util</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/OrthoUtil/api/TableUtil">​Table​Util</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/OrthoUtil/api/MathUtil">​Math​Util</a></li></ul></nav></div></div><main class="docMainContainer_HJE1"><div class="container padding-vert--lg"><div class="row"><div class="col docItemCol_MU3C"><div class="docItemContainer_Wv98"><article><div class="member_J0w1 markdown"><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_oUs_"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><header><h1 class="docTitle_mZRt" style="text-decoration:none"><span style="display:inline-block">Table</span><span style="display:inline-block">Util</span></h1><div class="luaClassTags_EipM"></div><div></div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="pickRandom"><code style="text-decoration:none">pickRandom</code><a href="#pickRandom" class="hash-link" aria-label="Direct link to pickRandom" title="Direct link to pickRandom">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Ortho-Games/OrthoUtil.git/blob/main/src/TableUtil.lua#L14"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TableUtil<!-- -->.</code><code class="green_DgR4">pickRandom</code><code>(</code><div class="inset_uKQm"><div><code>tbl<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">T</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Table to pick from.</p>
+</span></span></div><div><code>except<!-- -->: </code><code class="blue_P4bS">T?</code><span class="inlineDescription_G7Er">-- <span>
+<p>A value from the tbl you don't want picked.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
+<p>the picked value.</p>
+</span></span></div><div>
+<p>Get a random value from an array.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="arrToOrderLUT"><code style="text-decoration:none">arrToOrderLUT</code><a href="#arrToOrderLUT" class="hash-link" aria-label="Direct link to arrToOrderLUT" title="Direct link to arrToOrderLUT">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Ortho-Games/OrthoUtil.git/blob/main/src/TableUtil.lua#L40"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TableUtil<!-- -->.</code><code class="green_DgR4">arrToOrderLUT</code><code>(</code><div class="inset_uKQm"><div><code>arr<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">number</code><code>]</code></span><code>: </code><code class="blue_P4bS">T</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>array to convert</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">T</code><code>]</code></span><code>: </code><code class="blue_P4bS">number</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>mapped dictionary</p>
+</span></span></div><div>
+<p>Returns a dictionary with each key as the value with the given array index as the value.</p>
+<p>{"a", "b", "c"} => {["a"] = 1, ["b"] = 2, ["c"] = 3}</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="arrayToDict"><code style="text-decoration:none">arrayToDict</code><a href="#arrayToDict" class="hash-link" aria-label="Direct link to arrayToDict" title="Direct link to arrayToDict">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Ortho-Games/OrthoUtil.git/blob/main/src/TableUtil.lua#L59"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TableUtil<!-- -->.</code><code class="green_DgR4">arrayToDict</code><code>(</code><div class="inset_uKQm"><div><code>arr<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">T</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>array to convert</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">T</code><code>]</code></span><code>: </code><code class="blue_P4bS">T</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>mapped dictionary</p>
+</span></span></div><div>
+<p>Returns a dictionary with each key mapped to its exact value. Useful for making custom enums.</p>
+<p>{"a", "b", "c"} => {["a"] = "a", ["b"] = "b", ["c"] = "c"}</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="arrayToCustomDict"><code style="text-decoration:none">arrayToCustomDict</code><a href="#arrayToCustomDict" class="hash-link" aria-label="Direct link to arrayToCustomDict" title="Direct link to arrayToCustomDict">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Ortho-Games/OrthoUtil.git/blob/main/src/TableUtil.lua#L79"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TableUtil<!-- -->.</code><code class="green_DgR4">arrayToCustomDict</code><code>(</code><div class="inset_uKQm"><div><code>arr<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">T</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>array to convert</p>
+</span></span></div><div><code>map<!-- -->: </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code class="blue_P4bS">number</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code class="blue_P4bS">T</code></div><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
+<p>mapper function</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">T</code><code>]</code></span><code>: </code><code class="blue_P4bS">T</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>mapped dictionary</p>
+</span></span></div><div>
+<p>Returns a dictionary with each key mapped to each value and each value the result of a function.</p>
+<p>{"a", "b", "c"} => {["a"] = map("a"), ["b"] = map("b"), ["c"] = map("c")}</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="getValues"><code style="text-decoration:none">getValues</code><a href="#getValues" class="hash-link" aria-label="Direct link to getValues" title="Direct link to getValues">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Ortho-Games/OrthoUtil.git/blob/main/src/TableUtil.lua#L96"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TableUtil<!-- -->.</code><code class="green_DgR4">getValues</code><code>(</code><div class="inset_uKQm"><div><code>dict<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">any</code><code>]</code></span><code>: </code><code class="blue_P4bS">T</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>input dictionary</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">{</code><code class="blue_P4bS">T</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>output array with all values.</p>
+</span></span></div><div>
+<p>Returns all the values out of a dictionary as an array.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="filter"><code style="text-decoration:none">filter</code><a href="#filter" class="hash-link" aria-label="Direct link to filter" title="Direct link to filter">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Ortho-Games/OrthoUtil.git/blob/main/src/TableUtil.lua#L112"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TableUtil<!-- -->.</code><code class="green_DgR4">filter</code><code>(</code><div class="inset_uKQm"><div><code>t<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">T</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>input array (must be an array)</p>
+</span></span></div><div><code>predicate<!-- -->: </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code>key<!-- -->: </code><code class="blue_P4bS">any</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>value<!-- -->: </code><code class="blue_P4bS">T</code></div><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">boolean</code></div></div><code>) → </code><code class="purple_ieR2">{</code><code class="blue_P4bS">T</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>output array with only predicate truthy values.</p>
+</span></span></div><div>
+<p>Returns an array with only values that get a truthy result from the predicate function.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="map"><code style="text-decoration:none">map</code><a href="#map" class="hash-link" aria-label="Direct link to map" title="Direct link to map">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Ortho-Games/OrthoUtil.git/blob/main/src/TableUtil.lua#L132"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TableUtil<!-- -->.</code><code class="green_DgR4">map</code><code>(</code><div class="inset_uKQm"><div><code>t<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">T</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>input array (must be an array)</p>
+</span></span></div><div><code>mapper<!-- -->: </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code>key<!-- -->: </code><code class="blue_P4bS">any</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>value<!-- -->: </code><code class="blue_P4bS">T</code></div><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
+<p>function that returns a new value.</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">{</code><code class="blue_P4bS">T</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>output array with only predicate truthy values.</p>
+</span></span></div><div>
+<p>Returns an array/dictionary with each value converted into a value returned from a mapper function.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="filter_map_dict"><code style="text-decoration:none">filter_map_dict</code><a href="#filter_map_dict" class="hash-link" aria-label="Direct link to filter_map_dict" title="Direct link to filter_map_dict">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Ortho-Games/OrthoUtil.git/blob/main/src/TableUtil.lua#L150"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TableUtil<!-- -->.</code><code class="green_DgR4">filter_map_dict</code><code>(</code><div class="inset_uKQm"><div><code>t<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">T</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>input array (must be an array)</p>
+</span></span></div><div><code>filter_mapper<!-- -->: </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code>key<!-- -->: </code><code class="blue_P4bS">T</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>value<!-- -->: </code><code class="blue_P4bS">U</code></div><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">any?</code><span class="inlineDescription_G7Er">-- <span>
+<p>function that returns a new value.</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">T</code><code>]</code></span><code>: </code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>output array with only predicate truthy values.</p>
+</span></span></div><div>
+<p>Combined the filter and map functions together to create a new table that only has filter_mapper values that are truthy. This works on dictionaries, but it can leave holes in an array.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="filter_map"><code style="text-decoration:none">filter_map</code><a href="#filter_map" class="hash-link" aria-label="Direct link to filter_map" title="Direct link to filter_map">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Ortho-Games/OrthoUtil.git/blob/main/src/TableUtil.lua#L171"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TableUtil<!-- -->.</code><code class="green_DgR4">filter_map</code><code>(</code><div class="inset_uKQm"><div><code>t<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">number</code><code>]</code></span><code>: </code><code class="blue_P4bS">U</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>input array (must be an array)</p>
+</span></span></div><div><code>filter_mapper<!-- -->: </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code>key<!-- -->: </code><code class="blue_P4bS">T</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>value<!-- -->: </code><code class="blue_P4bS">U</code></div><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">any?</code><span class="inlineDescription_G7Er">-- <span>
+<p>function that returns a new value.</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">T</code><code>]</code></span><code>: </code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>output array with only predicate truthy values.</p>
+</span></span></div><div>
+<p>Combined the filter and map functions together to create a new table that only has filter_mapper values that are truthy. This works on dictionaries, but it can leave holes in an array.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="reduce"><code style="text-decoration:none">reduce</code><a href="#reduce" class="hash-link" aria-label="Direct link to reduce" title="Direct link to reduce">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Ortho-Games/OrthoUtil.git/blob/main/src/TableUtil.lua#L192"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TableUtil<!-- -->.</code><code class="green_DgR4">reduce</code><code>(</code><div class="inset_uKQm"><div><code>t<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">number</code><code>]</code></span><code>: </code><code class="blue_P4bS">U</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>input array (must be an array)</p>
+</span></span></div><div><code>reducer<!-- -->: </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code>accumulator<!-- -->: </code><code class="blue_P4bS">U</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>value<!-- -->: </code><code class="blue_P4bS">T</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>key<!-- -->: </code><code class="blue_P4bS">any</code></div><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">U</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>function that takes in and returns the accumulator.</p>
+</span></span></div><div><code>initialValue<!-- -->: </code><code class="blue_P4bS">U</code><span class="inlineDescription_G7Er">-- <span>
+<p>The value the accumulator starts at.</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">T</code><code>]</code></span><code>: </code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>output array with only predicate truthy values.</p>
+</span></span></div><div>
+<p>On each member of an array/dictionary accumulate a value based on array/dictionary values.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="find"><code style="text-decoration:none">find</code><a href="#find" class="hash-link" aria-label="Direct link to find" title="Direct link to find">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Ortho-Games/OrthoUtil.git/blob/main/src/TableUtil.lua#L210"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TableUtil<!-- -->.</code><code class="green_DgR4">find</code><code>(</code><div class="inset_uKQm"><div><code>t<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">T</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>input array/dictionary</p>
+</span></span></div><div><code>predicate<!-- -->: </code><code class="purple_ieR2">(</code><code>value<!-- -->: </code><code class="blue_P4bS">T</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">boolean</code></div></div><code>) → </code><code class="blue_P4bS">T?</code></div><div>
+<p>Search for and return the first value that returns a truthy value from the predicate.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="findIndex"><code style="text-decoration:none">findIndex</code><a href="#findIndex" class="hash-link" aria-label="Direct link to findIndex" title="Direct link to findIndex">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Ortho-Games/OrthoUtil.git/blob/main/src/TableUtil.lua#L228"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TableUtil<!-- -->.</code><code class="green_DgR4">findIndex</code><code>(</code><div class="inset_uKQm"><div><code>t<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">U</code><code>]</code></span><code class="blue_P4bS">:T</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>input array/dictionary</p>
+</span></span></div><div><code>predicate<!-- -->: </code><code class="purple_ieR2">(</code><code>value<!-- -->: </code><code class="blue_P4bS">T</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">boolean</code></div></div><code>) → </code><code class="blue_P4bS">U?</code></div><div>
+<p>Search for and return the first index that returns a truthy value from the predicate.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="filter_map_no_duplicates"><code style="text-decoration:none">filter_map_no_duplicates</code><a href="#filter_map_no_duplicates" class="hash-link" aria-label="Direct link to filter_map_no_duplicates" title="Direct link to filter_map_no_duplicates">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Ortho-Games/OrthoUtil.git/blob/main/src/TableUtil.lua#L246"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TableUtil<!-- -->.</code><code class="green_DgR4">filter_map_no_duplicates</code><code>(</code><div class="inset_uKQm"><div><code>t<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">T</code><code>]</code></span><code>: </code><code class="blue_P4bS">U</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>input array/dictionary</p>
+</span></span></div><div><code>filter_mapper<!-- -->: </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code class="blue_P4bS">T</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code class="blue_P4bS">U</code></div><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
+<p>function takes in key, value returns anything.</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">T</code><code>]</code></span><code>: </code><code class="blue_P4bS">U</code><code class="purple_ieR2">}</code></div><div>
+<p>Filter map, however it only adds values to the return table that haven't been added before.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="weightedRandom"><code style="text-decoration:none">weightedRandom</code><a href="#weightedRandom" class="hash-link" aria-label="Direct link to weightedRandom" title="Direct link to weightedRandom">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Ortho-Games/OrthoUtil.git/blob/main/src/TableUtil.lua#L273"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TableUtil<!-- -->.</code><code class="green_DgR4">weightedRandom</code><code>(</code><div class="inset_uKQm"><div><code>values<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">T</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>input array/dictionary to pick from</p>
+</span></span></div><div><code>weights<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">number</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>input weights table whose indicies match to values.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
+<p>a weighted randomly picked value.</p>
+</span></span></div><div>
+<p>Given two arrays of possible values, and weights for each of those values, pick one entry at random.</p>
+</div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
+    &quot;functions&quot;: [
+        {
+            &quot;name&quot;: &quot;pickRandom&quot;,
+            &quot;desc&quot;: &quot;Get a random value from an array.\n\n\t&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;tbl&quot;,
+                    &quot;desc&quot;: &quot;Table to pick from.&quot;,
+                    &quot;lua_type&quot;: &quot;{ T }&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;except&quot;,
+                    &quot;desc&quot;: &quot;A value from the tbl you don&#x27;t want picked.&quot;,
+                    &quot;lua_type&quot;: &quot;T?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;the picked value.&quot;,
+                    &quot;lua_type&quot;: &quot;T&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 14,
+                &quot;path&quot;: &quot;src/TableUtil.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;arrToOrderLUT&quot;,
+            &quot;desc&quot;: &quot;Returns a dictionary with each key as the value with the given array index as the value.\n\n{\&quot;a\&quot;, \&quot;b\&quot;, \&quot;c\&quot;} =&gt; {[\&quot;a\&quot;] = 1, [\&quot;b\&quot;] = 2, [\&quot;c\&quot;] = 3}\n\n\t&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;arr&quot;,
+                    &quot;desc&quot;: &quot;array to convert&quot;,
+                    &quot;lua_type&quot;: &quot;{[number]: T}&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;mapped dictionary&quot;,
+                    &quot;lua_type&quot;: &quot;{[T]: number}&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 40,
+                &quot;path&quot;: &quot;src/TableUtil.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;arrayToDict&quot;,
+            &quot;desc&quot;: &quot;Returns a dictionary with each key mapped to its exact value. Useful for making custom enums.\n\n{\&quot;a\&quot;, \&quot;b\&quot;, \&quot;c\&quot;} =&gt; {[\&quot;a\&quot;] = \&quot;a\&quot;, [\&quot;b\&quot;] = \&quot;b\&quot;, [\&quot;c\&quot;] = \&quot;c\&quot;}\n\n\t&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;arr&quot;,
+                    &quot;desc&quot;: &quot;array to convert&quot;,
+                    &quot;lua_type&quot;: &quot;{T}&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;mapped dictionary&quot;,
+                    &quot;lua_type&quot;: &quot;{[T]: T}&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 59,
+                &quot;path&quot;: &quot;src/TableUtil.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;arrayToCustomDict&quot;,
+            &quot;desc&quot;: &quot;Returns a dictionary with each key mapped to each value and each value the result of a function. \n\n{\&quot;a\&quot;, \&quot;b\&quot;, \&quot;c\&quot;} =&gt; {[\&quot;a\&quot;] = map(\&quot;a\&quot;), [\&quot;b\&quot;] = map(\&quot;b\&quot;), [\&quot;c\&quot;] = map(\&quot;c\&quot;)}\n\n\t&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;arr&quot;,
+                    &quot;desc&quot;: &quot;array to convert&quot;,
+                    &quot;lua_type&quot;: &quot;{T}&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;map&quot;,
+                    &quot;desc&quot;: &quot;mapper function&quot;,
+                    &quot;lua_type&quot;: &quot;(number, T) -&gt; T&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;mapped dictionary&quot;,
+                    &quot;lua_type&quot;: &quot;{[T]: T}&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 79,
+                &quot;path&quot;: &quot;src/TableUtil.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;getValues&quot;,
+            &quot;desc&quot;: &quot;Returns all the values out of a dictionary as an array.\n\n\t&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;dict&quot;,
+                    &quot;desc&quot;: &quot;input dictionary&quot;,
+                    &quot;lua_type&quot;: &quot;{[any]: T}&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;output array with all values.&quot;,
+                    &quot;lua_type&quot;: &quot;{ T }&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 96,
+                &quot;path&quot;: &quot;src/TableUtil.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;filter&quot;,
+            &quot;desc&quot;: &quot;Returns an array with only values that get a truthy result from the predicate function.\n\n\t&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;t&quot;,
+                    &quot;desc&quot;: &quot;input array (must be an array)&quot;,
+                    &quot;lua_type&quot;: &quot;{ T }&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;predicate&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(key: any, value: T) -&gt; boolean&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;output array with only predicate truthy values.&quot;,
+                    &quot;lua_type&quot;: &quot;{ T }&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 112,
+                &quot;path&quot;: &quot;src/TableUtil.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;map&quot;,
+            &quot;desc&quot;: &quot;Returns an array/dictionary with each value converted into a value returned from a mapper function.\n\n\t&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;t&quot;,
+                    &quot;desc&quot;: &quot;input array (must be an array)&quot;,
+                    &quot;lua_type&quot;: &quot;{ T }&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;mapper&quot;,
+                    &quot;desc&quot;: &quot;function that returns a new value.&quot;,
+                    &quot;lua_type&quot;: &quot;(key: any, value: T) -&gt; boolean&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;output array with only predicate truthy values.&quot;,
+                    &quot;lua_type&quot;: &quot;{ T }&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 132,
+                &quot;path&quot;: &quot;src/TableUtil.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;filter_map_dict&quot;,
+            &quot;desc&quot;: &quot;Combined the filter and map functions together to create a new table that only has filter_mapper values that are truthy. This works on dictionaries, but it can leave holes in an array.\n\n\t&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;t&quot;,
+                    &quot;desc&quot;: &quot;input array (must be an array)&quot;,
+                    &quot;lua_type&quot;: &quot;{ T }&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;filter_mapper&quot;,
+                    &quot;desc&quot;: &quot;function that returns a new value.&quot;,
+                    &quot;lua_type&quot;: &quot;(key: T, value: U) -&gt; any?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;output array with only predicate truthy values.&quot;,
+                    &quot;lua_type&quot;: &quot;{ [T]: any }&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 150,
+                &quot;path&quot;: &quot;src/TableUtil.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;filter_map&quot;,
+            &quot;desc&quot;: &quot;Combined the filter and map functions together to create a new table that only has filter_mapper values that are truthy. This works on dictionaries, but it can leave holes in an array.\n\n\t&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;t&quot;,
+                    &quot;desc&quot;: &quot;input array (must be an array)&quot;,
+                    &quot;lua_type&quot;: &quot;{ [number]: U }&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;filter_mapper&quot;,
+                    &quot;desc&quot;: &quot;function that returns a new value.&quot;,
+                    &quot;lua_type&quot;: &quot;(key: T, value: U) -&gt; any?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;output array with only predicate truthy values.&quot;,
+                    &quot;lua_type&quot;: &quot;{ [T]: any }&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 171,
+                &quot;path&quot;: &quot;src/TableUtil.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;reduce&quot;,
+            &quot;desc&quot;: &quot;On each member of an array/dictionary accumulate a value based on array/dictionary values.\n\n\t&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;t&quot;,
+                    &quot;desc&quot;: &quot;input array (must be an array)&quot;,
+                    &quot;lua_type&quot;: &quot;{ [number]: U }&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;reducer&quot;,
+                    &quot;desc&quot;: &quot;function that takes in and returns the accumulator.&quot;,
+                    &quot;lua_type&quot;: &quot;(accumulator: U, value: T, key: any) -&gt; U&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;initialValue&quot;,
+                    &quot;desc&quot;: &quot;The value the accumulator starts at.&quot;,
+                    &quot;lua_type&quot;: &quot;U&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;output array with only predicate truthy values.&quot;,
+                    &quot;lua_type&quot;: &quot;{ [T]: any }&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 192,
+                &quot;path&quot;: &quot;src/TableUtil.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;find&quot;,
+            &quot;desc&quot;: &quot;Search for and return the first value that returns a truthy value from the predicate.\n\n\t&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;t&quot;,
+                    &quot;desc&quot;: &quot;input array/dictionary&quot;,
+                    &quot;lua_type&quot;: &quot;{T}&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;predicate&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(value: T) -&gt; boolean&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;T?&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 210,
+                &quot;path&quot;: &quot;src/TableUtil.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;findIndex&quot;,
+            &quot;desc&quot;: &quot;Search for and return the first index that returns a truthy value from the predicate.\n\n\t&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;t&quot;,
+                    &quot;desc&quot;: &quot;input array/dictionary&quot;,
+                    &quot;lua_type&quot;: &quot;{ [U]:T }&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;predicate&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(value: T) -&gt; boolean&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;U?&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 228,
+                &quot;path&quot;: &quot;src/TableUtil.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;filter_map_no_duplicates&quot;,
+            &quot;desc&quot;: &quot;Filter map, however it only adds values to the return table that haven&#x27;t been added before.\n\n\t&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;t&quot;,
+                    &quot;desc&quot;: &quot;input array/dictionary&quot;,
+                    &quot;lua_type&quot;: &quot;{ [T]: U }&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;filter_mapper&quot;,
+                    &quot;desc&quot;: &quot;function takes in key, value returns anything.&quot;,
+                    &quot;lua_type&quot;: &quot;(T, U) -&gt; any&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;{ [T]: U }&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 246,
+                &quot;path&quot;: &quot;src/TableUtil.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;weightedRandom&quot;,
+            &quot;desc&quot;: &quot;Given two arrays of possible values, and weights for each of those values, pick one entry at random.\n\n\t&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;values&quot;,
+                    &quot;desc&quot;: &quot;input array/dictionary to pick from&quot;,
+                    &quot;lua_type&quot;: &quot;{ T }&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;weights&quot;,
+                    &quot;desc&quot;: &quot;input weights table whose indicies match to values.&quot;,
+                    &quot;lua_type&quot;: &quot;{ number }&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;a weighted randomly picked value.&quot;,
+                    &quot;lua_type&quot;: &quot;T&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 273,
+                &quot;path&quot;: &quot;src/TableUtil.lua&quot;
+            }
+        }
+    ],
+    &quot;properties&quot;: [],
+    &quot;types&quot;: [],
+    &quot;name&quot;: &quot;TableUtil&quot;,
+    &quot;desc&quot;: &quot;&quot;,
+    &quot;source&quot;: {
+        &quot;line&quot;: 4,
+        &quot;path&quot;: &quot;src/TableUtil.lua&quot;
+    }
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#arrayToCustomDict" class="table-of-contents__link toc-highlight">.arrayToCustomDict</a></li><li><a href="#arrayToDict" class="table-of-contents__link toc-highlight">.arrayToDict</a></li><li><a href="#arrToOrderLUT" class="table-of-contents__link toc-highlight">.arrToOrderLUT</a></li><li><a href="#filter" class="table-of-contents__link toc-highlight">.filter</a></li><li><a href="#filter_map" class="table-of-contents__link toc-highlight">.filter_map</a></li><li><a href="#filter_map_dict" class="table-of-contents__link toc-highlight">.filter_map_dict</a></li><li><a href="#filter_map_no_duplicates" class="table-of-contents__link toc-highlight">.filter_map_no_duplicates</a></li><li><a href="#find" class="table-of-contents__link toc-highlight">.find</a></li><li><a href="#findIndex" class="table-of-contents__link toc-highlight">.findIndex</a></li><li><a href="#getValues" class="table-of-contents__link toc-highlight">.getValues</a></li><li><a href="#map" class="table-of-contents__link toc-highlight">.map</a></li><li><a href="#pickRandom" class="table-of-contents__link toc-highlight">.pickRandom</a></li><li><a href="#reduce" class="table-of-contents__link toc-highlight">.reduce</a></li><li><a href="#weightedRandom" class="table-of-contents__link toc-highlight">.weightedRandom</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 DylWithlt. Built with Moonwave and Docusaurus</div></div></div></footer></div>
+<script src="/OrthoUtil/assets/js/runtime~main.b292d188.js"></script>
+<script src="/OrthoUtil/assets/js/main.763f2b72.js"></script>
+</body>
+</html>
