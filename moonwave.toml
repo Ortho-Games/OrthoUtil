@@ -1,5 +1,5 @@
 title = "OrthoUtil"                                         # From Git
-gitRepoUrl = "https://github.com/Ortho-Games/OrthoUtil.git" # From Git
+gitRepoUrl = "https://github.com/Ortho-Games/OrthoUtil" # From Git
 
 gitSourceBranch = "main"
 changelog = true
